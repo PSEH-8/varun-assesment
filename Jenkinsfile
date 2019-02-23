@@ -15,8 +15,8 @@ pipeline {
             steps {
                 echo 'Deploying....'
 
-                sh 'scp -oStrictHostKeyChecking=no -i /home/bitnami/jenkin_1.pem target/football-league-standings-1.0.0.jar ubuntu@18.217.63.227:football-league-standings-1.0.0.jar'
-                sh 'ssh -oStrictHostKeyChecking=no ubuntu@18.217.63.227 "java -jar football-league-standings-1.0.0.jar"'
+                sh 'scp -oStrictHostKeyChecking=no -i /home/bitnami/jenkins.pem target/football-league-standings-1.0.0.jar ubuntu@18.217.63.227:football-league-standings-1.0.0.jar'
+                sh 'ssh -oStrictHostKeyChecking=no -i /home/bitnami/jenkins.pem ubuntu@18.217.63.227 "java -jar football-league-standings-1.0.0.jar"'
             }
         }
     }
